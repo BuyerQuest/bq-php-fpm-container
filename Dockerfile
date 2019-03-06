@@ -1,23 +1,3 @@
-#FROM php:7.2-fpm
-#WORKDIR /tmp
-#RUN apt-get update && apt-get install -y \
-#        libfreetype6-dev \
-#        libjpeg62-turbo-dev \
-#        libmcrypt-dev \
-#        libpng-dev \
-#        libxml2-dev \
-#        libmemcached-dev \
-#        libcurl4-openssl-dev \
-#        --no-install-recommends \
-#     && curl -OJL https://github.com/websupport-sk/pecl-memcache/archive/4a9e4ab0d12150805feca3012854de9fd4e5a721.tar.gz \
-#     && tar xfz pecl-memcache-4a9e4ab0d12150805feca3012854de9fd4e5a721.tar.gz \
-#     && cd pecl-memcache-4a9e4ab0d12150805feca3012854de9fd4e5a721 \
-#     && phpize \
-#     && ./configure \
-#     && make \
-#     && make install
-#COPY ./pecl-memcache-4a9e4ab0d12150805feca3012854de9fd4e5a721/modules/memcache.so ./artifacts
-
 FROM php:7.2-fpm
 COPY ./artifacts/docker-php-pecl-install /usr/local/bin/
 RUN apt-get update && apt-get install -y \
