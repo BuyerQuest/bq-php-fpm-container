@@ -42,7 +42,7 @@ RUN  cat /tmp/xdebug.ini >> /usr/local/etc/php/conf.d/docker-php-pecl-xdebug.ini
 
 # Create PHP Logging folder
 RUN  rm -rf /var/log/php \
-  && mkdir  \
+  && mkdir /var/log/php \
   && chown www-data:www-data /var/log/php
 
 # Useful volumes are the code and the logging directories
